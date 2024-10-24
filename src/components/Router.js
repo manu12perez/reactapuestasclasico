@@ -2,15 +2,15 @@ import React, { Component } from 'react'
 import { BrowserRouter, Routes, Route, useParams } from "react-router-dom"
 import Menu from './Menu'
 import Home from './Home'
-import Equipo from './DetallesEquipo'
+import DetallesEquipo from './DetallesEquipo'
 import Apuestas from './Apuestas'
 import CreateApuesta from './CreateApuesta'
 
 export default class Router extends Component {
   render() {
-    function EquiposElement () {
+    function DetallesEquiposElement () {
         var {id} = useParams();
-        return <Equipo id={id} />
+        return <DetallesEquipo id={id} />
     }
 
     return (
@@ -18,7 +18,7 @@ export default class Router extends Component {
         <Menu />
         <Routes>
             <Route path="/" element={<Home />} />
-            <Route path="/equipo/:id" element={<EquiposElement />}/>
+            <Route path="/equipo/:id" element={<DetallesEquiposElement />}/>
             <Route path="/apuestas" element={<Apuestas />} />
             <Route path="/create" element={<CreateApuesta />} />
         </Routes>
